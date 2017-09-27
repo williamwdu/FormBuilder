@@ -33,5 +33,19 @@ else{
 $this->Cell($b,$c,$a,1,0,'L',1);
 }
 }
+
+function h1($a,$b=10,$c=12){
+$this->SetFont('Arial','B',$c);
+$this->SetTextColor(255,255,255);
+$this->SetFillColor(255,203,6);
+$this->Cell(195.9,$b,$a,1,1,'C',1); //letter size 215.9-20
+}
+
+function h2($a,$b=5,$c=11){
+$this->SetFont('Arial','B',$c);
+$this->SetTextColor(0,0,0);
+$this->SetFillColor(230,230,230);
+$this->Cell(195.9,$b,$a,1,1,'C',1); //letter size 215.9-20
+}
 }
 ?>
