@@ -14,7 +14,9 @@ Add text $a to the left corner of the column with bold font: height $b and width
 
 # Textcol($a,$b=10,$c=1)
 Add text $a to the left corner of the column with Times font
-height $b and binary $c indicate either the cell is fill all the way to the right or specify width
+height $b
+binary $c indicate either the cell is fill all the way to the right or specify width
+if $c=1, an new line will be called.
 
 # function h1($a,$b=10,$c=12)
 largest header, center text $a into a box
@@ -25,3 +27,11 @@ $c is the font size, defalut is 12
 secondary header, center text $a into a box
 $b is the height of box, default to 5 
 $c is the font size, defalut is 11
+
+# function custompagenumber($a=25)
+Add pagenumber to right upper corner of the page, $a is the distance of page number to the upper edge of the page
+
+# function customheader($logo,$title,$y_axis_initial=10)
+Add a title to the page, including a line, a log and a title.
+$logo is the path of the image
+

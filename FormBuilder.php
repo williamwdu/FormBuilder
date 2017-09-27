@@ -27,7 +27,7 @@ $this->SetFillColor(255,255,255);
 if($b==1){
 $x = $this->GetX();
 $tmp = 215.9 - $x - 10; //letter size, 10 mm margin
-$this->Cell($tmp,$c,$a,1,0,'L',1);
+$this->Cell($tmp,$c,$a,1,1,'L',1);
 }
 else{
 $this->Cell($b,$c,$a,1,0,'L',1);
@@ -46,6 +46,15 @@ $this->SetFont('Arial','B',$c);
 $this->SetTextColor(0,0,0);
 $this->SetFillColor(230,230,230);
 $this->Cell(195.9,$b,$a,1,1,'C',1); //letter size 215.9-20
+}
+
+function customheader($a=15){
+    // 15mm margin both side
+	$this->SetX(-$a);
+    $this->SetY($a);
+	$this->SetFont('Times');
+	$this->SetFontSize(10);
+    $this->Cell(0,10,'Page '.$this->PageNo(),0,0,'L');
 }
 }
 ?>
