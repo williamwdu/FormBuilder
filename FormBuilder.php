@@ -48,13 +48,24 @@ $this->SetFillColor(230,230,230);
 $this->Cell(195.9,$b,$a,1,1,'C',1); //letter size 215.9-20
 }
 
-function customheader($a=15){
+function custompagenumber($a=25){
     // 15mm margin both side
-	$this->SetX(-$a);
     $this->SetY($a);
+	$this->SetX(-$a);
 	$this->SetFont('Times');
 	$this->SetFontSize(10);
-    $this->Cell(0,10,'Page '.$this->PageNo(),0,0,'L');
+	$this->AliasNbPages();
+    $this->Cell(0,0,'Page '.$this->PageNo().' of '.'{nb}',0,0,'L');
+}
+
+function customheader($logo,$title,$y_axis_initial=10){
+	$this->SetFont('Arial','B',12);
+	$this->SetY($y_axis_initial);
+	$this->Image($logo,10,10,-100);
+	$this->SetX(95);
+	$this->Cell(50,10,$title,0,1,'C');
+	$this->Line(10,30,205.9,30);
+	$this->Ln();
 }
 }
 ?>
