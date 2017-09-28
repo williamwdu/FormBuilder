@@ -28,6 +28,10 @@ secondary header, center text $a into a box
 $b is the height of box, default to 5 
 $c is the font size, defalut is 11
 
+# function textline($a,$b=5,$c=8)
+regular text by line
+default, Arial 8 regular
+
 # function custompagenumber($a=25)
 Add pagenumber to right upper corner of the page, $a is the distance of page number to the upper edge of the page
 
@@ -35,3 +39,10 @@ Add pagenumber to right upper corner of the page, $a is the distance of page num
 Add a title to the page, including a line, a log and a title.
 $logo is the path of the image
 
+# function box($a,$b=5)
+Draw a whole page box for some section before
+Waring: Use this after you create all the text.
+It will draw a box that include $a rows from your current pin position
+
+# function checkbox($x,$y,$item,$checked=0,$a=5)
+Create a checkbox with text $item followed by it. If $checked=1, an X will be checked in checkbox
