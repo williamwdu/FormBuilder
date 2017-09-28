@@ -38,13 +38,13 @@ $this->SetFillColor(255,255,255);
 $x = $this->GetX();
 $y = $this->GetY();
 
-if(strlen($a) < 20){
-	$this->Cell($b,$c,"\r\n".$a,1,0,'R',1);
+if(strlen($a) > 20 && $b <=35){
+	$this->SetFont('Arial','B',8);
+	$this->MultiCell($b,5,$a,1,0,'R',1);
+	$this->setXY($x+35,$y);
 }
 else{
-$this->SetFont('Arial','B',8);
-$this->MultiCell($b,5,$a,1,0,'R',1);
-$this->setXY($x+35,$y);
+	$this->Cell($b,$c,"\r\n".$a,1,0,'R',1);
 }
 }
 
@@ -77,10 +77,16 @@ $this->SetFillColor(230,230,230);
 $this->Cell(195.9,$b,$a,1,1,'C',1); //letter size 215.9-20
 }
 
-function textline($a,$b=5,$c=8){
-$this->SetFont('Times');
-$this->setFontSize(9);
-$this->SetTextColor(0,0,0);
+function textline($a,$b=5,$c=8,$bold=0){
+	if($bold == 1 ){
+		$this->SetFont('Arial','B');
+		$this->setFontSize(9);
+	}
+	else{
+		$this->SetFont('Times');
+		$this->setFontSize(9);		
+	}
+	$this->SetTextColor(0,0,0);
 $this->SetFillColor(255,255,255);
 if(strlen($a)>136){
 	$this->MultiCell(195.9,$b,$a,0,1,'L',1);
